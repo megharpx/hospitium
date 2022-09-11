@@ -1,0 +1,20 @@
+<article class="post">
+  <div class="title">
+    <h2><a href="/post/{{id}}">{{title}}</a></h2>
+  </div>
+  {{#if hospital}}
+    <p class="meta">at: {{hospital}}</p>
+  {{/if}}
+  <div class="content">
+    {{post_content}}
+  </div>
+  <div class="meta">
+    Posted by
+    {{user.username}}
+    Date
+    {{format_date created_at}}
+    |
+    <br />
+    <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+  </div>
+</article>
