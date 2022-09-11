@@ -16,7 +16,7 @@ const sess = {
   }),
 };
 
-// middleware
+// link to middleware
 const app = express();
 const PORT = process.env.PORT || 3006;
 const helpers = require("./utils/helpers");

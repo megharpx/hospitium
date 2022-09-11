@@ -1,0 +1,47 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospitium</title>
+    <link rel="stylesheet" href="" integrity="" crossorigin="" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/post.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <div>
+        <a id="homepage" href="/"><h1>Hospitium</h1><img src="" /></a>
+      </div>
+      <div class="userChoices">
+
+        <a id="dashboardLink" href="/dashboard">Your Posts</a>
+
+        <div>
+          {{#if loggedIn}}
+            <a id="logout">Log out</a>
+          {{else}}
+            <a href="/login">Log in</a>
+          {{/if}}
+        </div>
+      </div>
+    </header>
+
+    <script src="" integrity="" crossorigin=""></script>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <h3>Find the best care around, because you deserve it!</h3>
+    </footer>
+
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
