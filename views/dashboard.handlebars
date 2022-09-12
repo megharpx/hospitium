@@ -1,7 +1,7 @@
 <div class="dashboard-main">
     <section class="container new-post">
         <h2>Create New Post</h2>
-
+        {{!-- container for new post creation --}}
         <div class="new-post-form-container">
             <form class="new-post-form">
                 <div class="new-post-title">
@@ -16,6 +16,7 @@
                     <label for="post_content">Content</label>
                     <textarea id="post-content" name="post-content"></textarea>
                 </div>
+                {{!-- search options --}}
                 <div class="map-options">
                     <p>How would you like to choose your post location?</p>
                     <input type="radio" id="address" name="location" value="Address">
@@ -86,4 +87,39 @@
                                 <option value="WY">Wyoming</option>
                                 </select>
                 </div>
-                
+                {{!-- map container size parameters --}}
+                 <div id="new-post-map-container" style="visibility: hidden; max-height: 0;">
+                    <div id="map"></div>
+                </div>
+                <div id="latlon-display" style="visibility: hidden; max-height: 0;">
+                    <div>
+                        <p class="latlon-label">Latitude:</p>
+                        <p id="lat-display"></p><br>
+                    </div>
+                    <div>
+                        <p class="latlon-label">Longitude:</p>
+                        <p id="lon-display"></p>
+                    </div>
+                </div>
+                <button type="submit" class="post-btn">Create Post</button>
+            </form>
+        </div>
+    </section>
+    <section class="container" id="post-container">
+    {{#if posts.length}}
+        <h2>Posts you've made</h2>
+            {{#each posts as |post|}}
+                {{> post-info post}}
+                <div class="post-options">
+                    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+                </div>
+            {{/each}}
+        </ol>
+    {{else}}
+        <h2 style="width: 100%; text-align: center; padding-right: 10px;">No posts have been made.</h2>
+    {{/if}}
+    </section>
+</div>
+{{!-- map.js holds the geolocation parameters for the map api. this will show the map in our dashboard --}}
+<script src="/js/map.js"></script>
+<script src="/js/dashboard.js"></script>
