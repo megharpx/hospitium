@@ -6,7 +6,7 @@ module.exports = {
       date
     ).getHours()}:${new Date(date).getMinutes()}`;
   },
-};
+},
 format_url: (url) => {
   return url
     .replace("http://", "")
@@ -15,7 +15,7 @@ format_url: (url) => {
     .split("/")[0]
     .split("?")[0];
 },
-  format_plural(word, amount);
+format_plural(word, amount)
 {
   if (amount !== 1) {
     return `${word}s`;
