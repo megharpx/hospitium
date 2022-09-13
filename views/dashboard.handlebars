@@ -1,0 +1,125 @@
+<div class="dashboard-main">
+    <section class="container new-post">
+        <h2>Create New Post</h2>
+        {{!-- container for new post creation --}}
+        <div class="new-post-form-container">
+            <form class="new-post-form">
+                <div class="new-post-title">
+                    <label for="post-title">Post Title</label>
+                    <input type="text" id="post-title" name="post-title" />
+                </div>
+                <div class="new-post-content">
+                    <label for="hospital">Hospital Location</label>
+                    <input type="text" id="hospital" name="hospital" placeholder="(optional)" style="width: 80%; margin: 0 auto 0 20px;" />
+                </div>
+                <div class="new-post-content">
+                    <label for="post_content">Review</label>
+                    <textarea id="post-content" name="post-content"></textarea>
+                </div>
+                {{!-- search options --}}
+                <div class="map-options">
+                    <p>How would you like to choose your post location?</p>
+                    <input type="radio" id="address" name="location" value="Address">
+                    <label for="address">Enter the address</label>
+                    <input type="radio" id="map-click" name="location" value="Map click">
+                    <label for="map-click">Find on map</label>
+                    <input type="radio" id="your-location" name="location" value="Use my location">
+                    <label for="your-location">Use my current location</label>
+                </div>
+                <div id="address-container" style="visibility: hidden; max-height: 0;">
+                    <label for="address">Street Address:</label>
+                    <input type="text" id="address-input" name="address" placeholder="123 main street"><br>
+                    <label for="city">City:</label>
+                    <input type="text" id="city-input" name="city" placeholder="Los Angeles"><br>
+                    <label for="state">State:</label>
+                            <select id="state-select" name="state">
+                                <option value="">State</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                                </select>
+                </div>
+                {{!-- map container size parameters --}}
+                 <div id="new-post-map-container" style="visibility: hidden; max-height: 0;">
+                    <div id="map"></div>
+                </div>
+                <div id="latlon-display" style="visibility: hidden; max-height: 0;">
+                    <div>
+                        <p class="latlon-label">Latitude:</p>
+                        <p id="lat-display"></p><br>
+                    </div>
+                    <div>
+                        <p class="latlon-label">Longitude:</p>
+                        <p id="lon-display"></p>
+                    </div>
+                </div>
+                <button type="submit" class="post-btn">Post</button>
+            </form>
+        </div>
+    </section>
+    <section class="container" id="post-container">
+    {{#if posts.length}}
+        <h2>Posts you've made</h2>
+            {{#each posts as |post|}}
+                {{> post-info post}}
+                <div class="post-options">
+                    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+                </div>
+            {{/each}}
+        </ol>
+    {{else}}
+        <h2 style="width: 100%; text-align: center; padding-right: 10px;">No posts have been made.</h2>
+    {{/if}}
+    </section>
+</div>
+{{!-- map.js holds the geolocation parameters for the map api. this will show the map in our dashboard --}}
+<script src="/js/map.js"></script>
+<script src="/js/dashboard.js"></script>

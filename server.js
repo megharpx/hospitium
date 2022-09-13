@@ -5,6 +5,14 @@ const path = require("path");
 const routes = require("./controllers");
 const exphbs = require("express-handlebars");
 
+// link to middleware
+const app = express();
+const PORT = process.env.PORT || 3006;
+const helpers = require("./utils/helpers");
+const sequelize = require("./config/connection");
+const hbs = exphbs.create({ helpers });
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 // establish session rules
 const sess = {
   secret: process.env.secret,
@@ -15,14 +23,6 @@ const sess = {
     db: sequelize,
   }),
 };
-
-// middleware
-const app = express();
-const PORT = process.env.PORT || 3006;
-const helpers = require("./utils/helpers");
-const sequelize = require("./config/connection");
-const hbs = exphbs.create({ helpers });
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // set routes
 app.use(routes);

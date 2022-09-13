@@ -1,0 +1,57 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospitium</title>
+    <script
+      src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"
+    ></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/dashboard.css" />
+    <link rel="stylesheet" href="/stylesheets/post.css" />
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <div>
+        <a id="homepage" href="/"><img src="/public/images/logo.png" /><h1
+          >Hospitium</h1></a>
+      </div>
+      <div class="userChoices">
+
+        <a id="dashboardLink" href="/dashboard">Dashboard</a>
+
+        <div>
+          {{#if loggedIn}}
+            <a id="logout">Log out</a>
+          {{else}}
+            <a href="/login">Log in</a>
+          {{/if}}
+        </div>
+      </div>
+    </header>
+
+    <script src="" integrity="" crossorigin=""></script>
+    <main>
+      {{{body}}}
+    </main>
+    <div id="map" style="width: 400px; height: 300px;"></div>
+    <footer>
+      <h3>Find the best care around, because you deserve it!</h3>
+    </footer>
+
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+
+    {{/if}}
+    <script src="/js/map.js"></script>
+  </body>
+
+</html>
