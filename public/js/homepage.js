@@ -1,4 +1,4 @@
-// function to get lat+lon numbers
+// function to get latitude and longitude location
 async function getPostLocations() {
   const response = await fetch("/api/posts", {
     method: "GET",
@@ -19,8 +19,8 @@ async function getPostLocations() {
 }
 
 function mapPosts(posts) {
-  // limit of 10 posts on display ata time
-  for (let i = 0; i <= 10; i++) {
+  // shows 8 posts
+  for (let i = 0; i <= 8; i++) {
     let post = posts[i];
 
     // if no post, break
