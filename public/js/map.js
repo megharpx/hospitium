@@ -10,3 +10,4 @@ const map = new mapboxgl.Map({
 map.on("style.load", () => {
   map.setFog({}); // Set the default atmosphere style
 });
+console.log(map);
