@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       "title",
       "created_at",
       "post_content",
-      // "hospital",
+      "hospital",
       "post_lat",
       "post_lon",
     ],

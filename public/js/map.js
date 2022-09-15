@@ -45,7 +45,7 @@ function getMap(lat, lon) {
       {
         attribution:
           'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 15,
+        maxZoom: 21,
         id: "mapbox/streets-v11",
         tileSize: 512,
         zoomOffset: -1,
@@ -73,7 +73,7 @@ function mapPost(post) {
 }
 
 function renderMapFlag() {
-  console.log("rendering flag...");
+  console.log("rendering...");
 
   var MapFlag = L.Icon.extend({
     options: {

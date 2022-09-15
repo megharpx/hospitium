@@ -1,0 +1,274 @@
+/* set up variables */
+:root {
+  --main-bg: #cad5e0;
+  --bg-white: #e3eef9;
+  --bg-blue: #9b9dff;
+  --main-text: #445970;
+  --secondary-text: #4b5055;
+  --border-white: #f8f9fa;
+  --border-black: #121314;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh;
+  height: fit-content;
+  background-color: var(--main-bg);
+  color: #077bff;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  font-family: "Helvetica";
+
+  background-image: url("/images/waiting-room.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 95%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 20px 20px 10px 20px;
+
+  border-bottom: var(--border-white) solid 1px;
+
+  background-color: var(--main-bg);
+  min-width: max-content;
+}
+
+header div {
+  display: flex;
+  max-width: 160px;
+}
+
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#homepage-link {
+  display: flex;
+  flex-direction: row;
+}
+
+#homepage-link h1 {
+  font-size: 36px;
+  margin: auto 10px 5px 0;
+}
+
+#homepage-link img {
+  height: 5px;
+}
+
+.user-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#dashboard-link {
+  margin: auto 0 auto 0;
+}
+
+.user-options div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 5px 10px 15px;
+}
+
+main {
+  min-height: 79vh;
+  height: fit-content;
+  margin-top: 20px;
+}
+
+button {
+  width: fit-content;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location h2 {
+  margin: 10px 0 0 0;
+}
+
+.location form {
+  display: flex;
+  margin: 10px 0 20px 0;
+  flex-direction: row;
+}
+
+.homepage-content {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container {
+  min-height: 200px;
+  height: fit-content;
+  min-width: fit-content;
+  background-color: var(--bg-white);
+  border: solid var(--border-white) 1px;
+  color: var(--secondary-text);
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+#map-container {
+  width: 40%;
+  height: 600px;
+  border: solid var(--border-white) 1px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--bg-blue);
+}
+
+#map {
+  height: 100%;
+  border: solid var(--border-black) 1px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#post-container {
+  min-width: 40%;
+  width: 40%;
+  background-color: var(--bg-white);
+  border: solid var(--border-white) 1px;
+
+  max-height: 63vh;
+  overflow: auto;
+}
+
+.post {
+  color: var(--secondary-text);
+  background-color: var(--bg-blue);
+  border: var(--border-black) solid 1px;
+  border-radius: 10px;
+  margin: 15px 10px 5px 10px;
+  padding: 10px;
+}
+
+.post a,
+.post h2 {
+  color: inherit;
+  margin: 5px 0 10px 0;
+}
+
+.content {
+  margin: 0 0 10px 20px;
+}
+
+.meta {
+  font-size: 90%;
+  color: #575c61;
+}
+
+footer {
+  margin-top: 20px;
+  width: 100%;
+  height: 60px;
+  border-top: solid var(--border-white) 1px;
+  color: var(--secondary-text);
+  background-color: var(--bg-blue);
+  display: flex;
+  justify-content: center;
+}
+
+/* media queries */
+/* MQ smaller screens */
+@media only screen and (max-width: 1024px) {
+  #map-container {
+    height: 400px;
+    width: 40%;
+  }
+
+  #post-container {
+    width: 50%;
+  }
+}
+/* tablets and smaller laptops */
+@media only screen and (max-width: 768px) {
+  body {
+    background-size: auto 100%;
+    /* width: 100%; */
+  }
+
+  .homepage-content {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  #map-container {
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+
+  #post-container {
+    width: 80%;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto 0 auto;
+  }
+}
+
+.post-popup {
+  color: var(--secondary-text);
+  background-color: var(--bg-white);
+  text-decoration: none;
+  border: 2px var(--border-black) solid;
+  border-radius: 12px;
+}
+
+.post-popup a {
+  text-decoration: none;
+  margin: 0;
+}
+
+.post-popup a h2 {
+  border: 1px var(--border-black) solid;
+  background-color: var(--bg-blue);
+  color: var(--secondary-text);
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 6px;
+  margin: 0;
+}
+
+.post-popup p {
+  margin: 5px 10px 5px 10px;
+}
+
+/* mobile MQ */
+@media only screen and (max-width: 480px) {
+  #map-container {
+    height: 300px;
+  }
+}
