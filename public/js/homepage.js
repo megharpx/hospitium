@@ -10,7 +10,7 @@ async function getPostLocations() {
       if (response.ok) {
         return response.json();
       } else {
-        // console.log(reponse.statusText);
+        console.log(response.statusText);
       }
     })
     .then((data) => {
@@ -23,7 +23,6 @@ function mapPosts(posts) {
   for (let i = 0; i <= 8; i++) {
     let post = posts[i];
 
-    // if no post, break
     if (!post) {
       break;
     }
