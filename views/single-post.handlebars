@@ -1,0 +1,28 @@
+<div class="single-post-main">
+    <article class= "container single-post-container">
+    
+    <div>
+    <h2 class="post-title"><b>{{post.title}}</b></h2>
+    {{#if post.hospital}}
+        <p class="meta">Location: {{post.hospital}}</p>
+    {{/if}}
+    <p class="meta">By {{post.user.username}} Date: {{format_date post.created_at}}</p>
+    <div class="post-content-container">
+       
+        <p>{{post.post_content}}</p>
+    </div>
+    {{#if loggedIn}}
+    <form class="comment-form">
+        <textarea class="comment-textarea" name="comment-body"></textarea>
+        <div>
+            <button id="comment-submit" type="submit">Comment</button>
+        </div>
+    </form>
+    {{/if}}
+    {{> comments post.comments}}
+
+    {{#if loggedIn}}
+    <script src="/js/comment.js"></script>
+    {{/if}}
+    </article>
+</div>
