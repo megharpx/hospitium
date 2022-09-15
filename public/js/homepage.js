@@ -10,7 +10,7 @@ async function getPostLocations() {
       if (response.ok) {
         return response.json();
       } else {
-        console.log(reponse.statusText);
+        // console.log(reponse.statusText);
       }
     })
     .then((data) => {

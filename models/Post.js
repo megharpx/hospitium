@@ -29,7 +29,7 @@ Post.init(
         key: "id",
       },
     },
-    bar_name: {
+    hospital: {
       type: DataTypes.STRING,
       allowNull: true,
     },

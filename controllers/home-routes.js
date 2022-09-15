@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -11,7 +10,7 @@ router.get("/", (req, res) => {
       "title",
       "created_at",
       "post_content",
-      "hospital",
+      // "hospital",
       "post_lat",
       "post_lon",
     ],
@@ -19,7 +18,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "commentBody", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -32,10 +31,11 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbPostData) => {
+      console.log(dbPostData);
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render("homepage", {
         posts,
-        loggedIn: req.session.loggedIn,
+        // loggedIn: req.session.loggedIn,
       });
     })
     .catch((err) => {
