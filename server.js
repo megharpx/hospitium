@@ -27,15 +27,15 @@ const sess = {
 // set routes
 app.use(routes);
 
-// set handlebar connection
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
-
 // set express rules
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
+// set handlebar connection
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 // connect database with server via Sequelize
 sequelize.sync({ force: false }).then(() => {
