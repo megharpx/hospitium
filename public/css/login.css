@@ -1,22 +1,28 @@
-.login-form {
-  width: 340px;
-  margin: 50px auto;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-.login-form form {
-  margin-bottom: 15px;
-  background: #f7f7f7;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+
+.login-main {
+  flex: 1 0 auto;
 }
-.login-form h2 {
-  margin: 0 0 15px;
+
+body {
+  background: #cad5e0;
 }
-.form-control,
-.btn {
-  min-height: 38px;
-  border-radius: 2px;
-}
-.btn {
-  font-size: 15px;
-  font-weight: bold;
-}
+
+.input-field input[type=date]:focus + label,
+    .input-field input[type=text]:focus + label,
+    .input-field input[type=email]:focus + label,
+    .input-field input[type=password]:focus + label {
+      color: #e91e63;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=email]:focus,
+    .input-field input[type=password]:focus {
+      border-bottom: 2px solid #e91e63;
+      box-shadow: none;
+    }
