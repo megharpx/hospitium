@@ -25,7 +25,7 @@
 body {
   min-height: 100vh;
   height: fit-content;
-  background-color: var(--main-bg);
+  background-color: var(--bg-blue);
   color: #077bff;
   display: flex;
   flex-direction: column;
@@ -45,9 +45,7 @@ header {
   height: 100px;
   width: 100%;
   padding: 20px 20px 10px 20px;
-
   border-bottom: var(--border-white) solid 1px;
-
   background-color: var(--main-bg);
   min-width: max-content;
 }
@@ -60,6 +58,11 @@ header div {
 header a {
   color: inherit;
   text-decoration: none;
+  font-size: x-large;
+}
+
+header h1 {
+  margin: auto 10px 5px 0;
 }
 
 #homepage-link {
@@ -88,7 +91,7 @@ header a {
 
 .user-options div {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   margin: 15px 5px 10px 15px;
 }
@@ -145,13 +148,14 @@ button {
   border-radius: 10px;
   padding: 10px;
   background-color: var(--bg-blue);
+  margin: auto;
 }
 
 #map {
   height: 100%;
   border: solid var(--border-black) 1px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  /* margin: auto; */
 }
 
 #post-container {
@@ -159,9 +163,9 @@ button {
   width: 40%;
   background-color: var(--bg-white);
   border: solid var(--border-white) 1px;
-
   max-height: 63vh;
   overflow: auto;
+  margin: auto;
 }
 
 .post {
@@ -169,7 +173,7 @@ button {
   background-color: var(--bg-blue);
   border: var(--border-black) solid 1px;
   border-radius: 10px;
-  margin: 15px 10px 5px 10px;
+  margin: 15px 15px 5px 10px;
   padding: 10px;
 }
 
@@ -189,14 +193,16 @@ button {
 }
 
 footer {
-  margin-top: 20px;
+  margin-top: 15px;
   width: 100%;
-  height: 60px;
-  border-top: solid var(--border-white) 1px;
   color: var(--secondary-text);
   background-color: var(--bg-blue);
   display: flex;
   justify-content: center;
+}
+
+footer h3 {
+  font-size: x-large;
 }
 
 /* media queries */
