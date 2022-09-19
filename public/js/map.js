@@ -77,7 +77,7 @@ function renderMapFlag() {
 
   var MapFlag = L.Icon.extend({
     options: {
-      iconUrl: "/images/map-flag.png",
+      iconUrl: "/images/logo.png",
       iconSize: [40, 50],
       iconAnchor: [25, 55],
       popupAnchor: [-3, -76],

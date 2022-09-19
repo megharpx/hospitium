@@ -10,6 +10,11 @@
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
       crossorigin=""
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/dashboard.css" />
     <link rel="stylesheet" href="/css/post.css" />
@@ -20,15 +25,16 @@
 
     <header>
       <div>
-        <a id="homepage" href="/"><h1>Hospitium</h1><img
-            src="/images/logo.png"
-          /></a>
+        <a id="homepage" href="/"><h1>Hospitium</h1></a><img
+          src="/images/logo.png"
+        />
       </div>
       <div class="user-options">
 
         <a id="dashboardLink" href="/dashboard">Dashboard</a>
 
         <div>
+
           {{#if loggedIn}}
             <a id="logout">Log out</a>
           {{else}}
@@ -43,6 +49,14 @@
       src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"
     ></script>
     <main>
       {{{body}}}
